@@ -11,7 +11,6 @@ WORKDIR /var/www
 COPY config/baikal.conf /etc/apache2/sites-available
 COPY config/ports.conf /etc/apache2/
 RUN sed -i "s/BK_HOSTNAME/$HOSTNAME/g" /etc/apache2/sites-available/baikal.conf
-RUN mkdir -p /etc/letsencrypt/live 
 RUN a2enmod rewrite expires
 RUN a2ensite baikal
 
