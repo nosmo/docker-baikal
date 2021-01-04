@@ -1,0 +1,9 @@
+BAIKAL_DIR=/home/user/docker-baikal
+BACKUP_DIR=/home/user/backups/
+NOW=$(date +%s)
+
+if test -d $BACKUP_DIR ; then
+
+   cp ${BAIKAL_DIR}/storage/db/db.sqlite ${BACKUP_DIR}/baikal.sqlite.${NOW}
+
+fi
